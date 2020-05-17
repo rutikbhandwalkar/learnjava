@@ -2,5 +2,16 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_191"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/jfreechart-1.0.19-demo.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/jSerialComm-2.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/miglayout15-swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/All jar files/rs2xml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/abc/abc/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/abc/abc/javax.activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/abc/abc/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rutik/Desktop/ModAgroSpark/Data/abc/abc/javax.mail-1.4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
