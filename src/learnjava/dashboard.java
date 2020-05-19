@@ -267,7 +267,7 @@ public class dashboard {
 		
 		Panel side_panel = new Panel();
 		side_panel.setBackground(new Color(54, 33, 89));
-		side_panel.setBounds(0, 0, 269, 692);
+		side_panel.setBounds(0, 0, 317, 692);
 		frmDashboard.getContentPane().add(side_panel);
 		side_panel.setLayout(null);
 		
@@ -294,11 +294,11 @@ public class dashboard {
 		
 		Panel side_panel_sales = new Panel();
 		side_panel_sales.setLayout(null);
-		side_panel_sales.setBounds(0, 221, 269, 51);
+		side_panel_sales.setBounds(0, 221, 317, 51);
 		side_panel.add(side_panel_sales);
 		
-		JLabel lblSalesPurchase = new JLabel("    Sales & Purchase");
-		lblSalesPurchase.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\sales&purchse dark 30.png"));
+		JLabel lblSalesPurchase = new JLabel("    My Progress");
+		lblSalesPurchase.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\send 30.png"));
 		lblSalesPurchase.setHorizontalAlignment(SwingConstants.LEFT);
 		lblSalesPurchase.setForeground(new Color(204, 204, 204));
 		lblSalesPurchase.setFont(new Font("Segoe UI", Font.BOLD, 18));
@@ -307,7 +307,7 @@ public class dashboard {
 		
 		Panel side_panel_settings = new Panel();
 		side_panel_settings.setLayout(null);
-		side_panel_settings.setBounds(0, 278, 269, 51);
+		side_panel_settings.setBounds(0, 278, 317, 51);
 		side_panel.add(side_panel_settings);
 		
 		JLabel lblSettings = new JLabel("    Settings");
@@ -320,37 +320,20 @@ public class dashboard {
 		
 		Panel side_panel_alert = new Panel();
 		side_panel_alert.setLayout(null);
-		side_panel_alert.setBounds(0, 335, 269, 51);
+		side_panel_alert.setBounds(0, 335, 317, 51);
 		side_panel.add(side_panel_alert);
 		
-		JLabel label_14 = new JLabel("23");
-		label_14.setHorizontalAlignment(SwingConstants.CENTER);
-		label_14.setForeground(new Color(0, 0, 102));
-		label_14.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		label_14.setBackground(new Color(255, 255, 255));
-		label_14.setBounds(235, 3, 30, 30);
-		side_panel_alert.add(label_14);
-		
-		JLabel lblCheckAlerts = new JLabel("    Check Alerts");
+		JLabel lblCheckAlerts = new JLabel("    Quiz");
 		lblCheckAlerts.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\alert dark 30.png"));
 		lblCheckAlerts.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCheckAlerts.setForeground(new Color(204, 204, 204));
 		lblCheckAlerts.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblCheckAlerts.setBounds(37, 11, 167, 30);
+		lblCheckAlerts.setBounds(37, 11, 199, 30);
 		side_panel_alert.add(lblCheckAlerts);
-		
-		JLabel label_10 = new JLabel("");
-		label_10.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\green dot.png"));
-		label_10.setHorizontalAlignment(SwingConstants.CENTER);
-		label_10.setForeground(Color.WHITE);
-		label_10.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		label_10.setBackground(new Color(0, 102, 0));
-		label_10.setBounds(235, 3, 30, 30);
-		side_panel_alert.add(label_10);
 		
 		Panel side_panel_profile = new Panel();
 		side_panel_profile.setLayout(null);
-		side_panel_profile.setBounds(0, 392, 269, 51);
+		side_panel_profile.setBounds(0, 392, 317, 51);
 		side_panel.add(side_panel_profile);
 		
 		JLabel lblProfile = new JLabel("    Profile");
@@ -363,7 +346,7 @@ public class dashboard {
 		
 		Panel side_panel_contact = new Panel();
 		side_panel_contact.setLayout(null);
-		side_panel_contact.setBounds(0, 449, 269, 51);
+		side_panel_contact.setBounds(0, 449, 317, 51);
 		side_panel.add(side_panel_contact);
 		
 		JLabel lblContactUs = new JLabel("    Contact Us");
@@ -963,7 +946,7 @@ public class dashboard {
 		contact_dashboard.add(btn_send);
 		
 		Panel locaton_panel = new Panel();
-		locaton_panel.setBounds(270, 0, 513, 75);
+		locaton_panel.setBounds(315, 0, 468, 75);
 		frmDashboard.getContentPane().add(locaton_panel);
 		locaton_panel.setLayout(null);
 		
