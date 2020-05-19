@@ -1,12 +1,29 @@
 package learnjava;
+import java.awt.EventQueue;
 
+import javax.swing.JFrame;
+import java.awt.Toolkit;
+import java.awt.Panel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
-import java.awt.EventQueue;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
-import java.awt.Panel;
-import java.awt.Toolkit;
+import javax.swing.JSeparator;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -22,28 +39,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
+import javax.swing.JTextArea;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import javax.swing.JScrollPane;
 
 public class dashboard {
 
@@ -73,7 +73,7 @@ public class dashboard {
 	public static void main(String [] args) {
 	//public static void main() {
 		
-		//username=args[0];
+		username=args[0];
 		EventQueue.invokeLater(new Runnable() {
 			@SuppressWarnings("static-access")
 			public void run() {
@@ -207,7 +207,7 @@ public class dashboard {
 		try {
 			Connection conn = null;
 			String url = "jdbc:mysql://localhost:3306/";
-			String dbName = "modagrospark";
+			String dbName = "learnjava";
 			String driver = "com.mysql.cj.jdbc.Driver";
 			String userName = "root";
 			String password = "";
@@ -267,19 +267,17 @@ public class dashboard {
 		
 		Panel side_panel = new Panel();
 		side_panel.setBackground(new Color(54, 33, 89));
-		side_panel.setBounds(0, 0, 317, 692);
+		side_panel.setBounds(0, 0, 296, 692);
 		frmDashboard.getContentPane().add(side_panel);
 		side_panel.setLayout(null);
 		
-		JLabel lblModagrospark = new JLabel("");
-		lblModagrospark.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\cooltext-357198999820524.png"));
-		lblModagrospark.setForeground(new Color(255, 255, 255));
-		lblModagrospark.setFont(new Font("Bodoni MT Poster Compressed", Font.PLAIN, 50));
-		lblModagrospark.setBounds(10, 56, 2190, 58);
-		side_panel.add(lblModagrospark);
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\cooltext-357198999820524.png"));
+		label.setBounds(-10, 50, 296, 62);
+		side_panel.add(label);
 		
 		Panel side_panel_home = new Panel();
-		side_panel_home.setBounds(0, 164, 2673 ,51);
+		side_panel_home.setBounds(0, 164, 296, 51);
 		side_panel_home.setBackground(new Color(80,65,118));
 		side_panel.add(side_panel_home);
 		side_panel_home.setLayout(null);
@@ -288,13 +286,13 @@ public class dashboard {
 		lblHome.setBounds(37, 11, 129, 30);
 		side_panel_home.add(lblHome);
 		lblHome.setHorizontalAlignment(SwingConstants.LEFT);
-		lblHome.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\home dark 30.png"));
+		lblHome.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\home dark 30.png"));
 		lblHome.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		lblHome.setForeground(new Color(204, 204, 204));
 		
 		Panel side_panel_sales = new Panel();
 		side_panel_sales.setLayout(null);
-		side_panel_sales.setBounds(0, 221, 317, 51);
+		side_panel_sales.setBounds(0, 221, 296, 51);
 		side_panel.add(side_panel_sales);
 		
 		JLabel lblSalesPurchase = new JLabel("    My Progress");
@@ -307,37 +305,37 @@ public class dashboard {
 		
 		Panel side_panel_settings = new Panel();
 		side_panel_settings.setLayout(null);
-		side_panel_settings.setBounds(0, 278, 317, 51);
+		side_panel_settings.setBounds(0, 278, 296, 51);
 		side_panel.add(side_panel_settings);
 		
-		JLabel lblSettings = new JLabel("    Settings");
-		lblSettings.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\setting dark 30.png"));
-		lblSettings.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSettings.setForeground(new Color(204, 204, 204));
-		lblSettings.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblSettings.setBounds(37, 11, 130, 30);
-		side_panel_settings.add(lblSettings);
-		
-		Panel side_panel_alert = new Panel();
-		side_panel_alert.setLayout(null);
-		side_panel_alert.setBounds(0, 335, 317, 51);
-		side_panel.add(side_panel_alert);
-		
 		JLabel lblCheckAlerts = new JLabel("    Quiz");
-		lblCheckAlerts.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\alert dark 30.png"));
+		lblCheckAlerts.setBounds(36, 11, 167, 30);
+		side_panel_settings.add(lblCheckAlerts);
+		lblCheckAlerts.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\alert dark 30.png"));
 		lblCheckAlerts.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCheckAlerts.setForeground(new Color(204, 204, 204));
 		lblCheckAlerts.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblCheckAlerts.setBounds(37, 11, 199, 30);
-		side_panel_alert.add(lblCheckAlerts);
+		
+		Panel side_panel_alert = new Panel();
+		side_panel_alert.setLayout(null);
+		side_panel_alert.setBounds(0, 335, 296, 51);
+		side_panel.add(side_panel_alert);
+		
+		JLabel lblSettings = new JLabel("    Settings");
+		lblSettings.setBounds(39, 11, 130, 30);
+		side_panel_alert.add(lblSettings);
+		lblSettings.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\setting dark 30.png"));
+		lblSettings.setHorizontalAlignment(SwingConstants.LEFT);
+		lblSettings.setForeground(new Color(204, 204, 204));
+		lblSettings.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		
 		Panel side_panel_profile = new Panel();
 		side_panel_profile.setLayout(null);
-		side_panel_profile.setBounds(0, 392, 317, 51);
+		side_panel_profile.setBounds(0, 392, 296, 51);
 		side_panel.add(side_panel_profile);
 		
 		JLabel lblProfile = new JLabel("    Profile");
-		lblProfile.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\profile dark 30.png"));
+		lblProfile.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\profile dark 30.png"));
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProfile.setForeground(new Color(204, 204, 204));
 		lblProfile.setFont(new Font("Segoe UI", Font.BOLD, 18));
@@ -346,11 +344,11 @@ public class dashboard {
 		
 		Panel side_panel_contact = new Panel();
 		side_panel_contact.setLayout(null);
-		side_panel_contact.setBounds(0, 449, 317, 51);
+		side_panel_contact.setBounds(0, 449, 296, 51);
 		side_panel.add(side_panel_contact);
 		
 		JLabel lblContactUs = new JLabel("    Contact Us");
-		lblContactUs.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\contact dark 30.png"));
+		lblContactUs.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\contact dark 30.png"));
 		lblContactUs.setHorizontalAlignment(SwingConstants.LEFT);
 		lblContactUs.setForeground(new Color(204, 204, 204));
 		lblContactUs.setFont(new Font("Segoe UI", Font.BOLD, 18));
@@ -359,7 +357,7 @@ public class dashboard {
 		
 		Panel bluestrip_panel = new Panel();
 		bluestrip_panel.setBackground(new Color(110, 89, 222));
-		bluestrip_panel.setBounds(2678, 74, 996 ,91);
+		bluestrip_panel.setBounds(294, 74, 970, 91);
 		frmDashboard.getContentPane().add(bluestrip_panel);
 		bluestrip_panel.setLayout(null);
 		
@@ -377,7 +375,7 @@ public class dashboard {
 		bluestrip_panel.add(lblSalesPurchase_2);
 		
 		date_label = new JLabel("Date");
-		date_label.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\calendar 20.png"));
+		date_label.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\calendar 20.png"));
 		date_label.setHorizontalAlignment(SwingConstants.TRAILING);
 		date_label.setForeground(Color.WHITE);
 		date_label.setFont(new Font("Consolas", Font.PLAIN, 18));
@@ -385,7 +383,7 @@ public class dashboard {
 		bluestrip_panel.add(date_label);
 		
 		time_label = new JLabel("Timer");
-		time_label.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\timer 20.png"));
+		time_label.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\timer 20.png"));
 		time_label.setHorizontalAlignment(SwingConstants.TRAILING);
 		time_label.setForeground(Color.WHITE);
 		time_label.setFont(new Font("Consolas", Font.PLAIN, 18));
@@ -400,7 +398,7 @@ public class dashboard {
 		
 		JLabel label_2 = new JLabel("");
 		label_2.setBounds(23, 11, 40, 53);
-		label_2.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\user 40.png"));
+		label_2.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\user 40.png"));
 		usershow_panel.add(label_2);
 		
 		JLabel lblVaibhavLagad = new JLabel(username);
@@ -416,7 +414,7 @@ public class dashboard {
 		usershow_panel.add(lblGeneralUser);
 		
 		JLabel logout_button = new JLabel("");                                                                            //logout button
-		logout_button.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\logout 40.png"));
+		logout_button.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\logout 40.png"));
 		logout_button.setBounds(430, 11, 40, 36);
 		usershow_panel.add(logout_button);
 		
@@ -438,7 +436,7 @@ public class dashboard {
 		
 		Panel home_dashboard = new Panel();
 		home_dashboard.setBackground(faint);
-		home_dashboard.setBounds(2604, 191, 516, 53);
+		home_dashboard.setBounds(294, 166, 970, 516);
 		frmDashboard.getContentPane().add(home_dashboard);
 		home_dashboard.setLayout(null);
 		
@@ -448,16 +446,10 @@ public class dashboard {
 		forcasting_panel.setBounds(601, 66, 306, 76);
 		home_dashboard.add(forcasting_panel);
 		
-		JLabel label_4 = new JLabel("");
-		Icon neull = null;
-		label_4.setIcon(neull);
-		label_4.setBounds(10, 11, 40, 53);
-		forcasting_panel.add(label_4);
-		
 		JLabel lblForecasting = new JLabel("Classes and Objects");
 		lblForecasting.setForeground(Color.WHITE);
 		lblForecasting.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblForecasting.setBounds(70, 11, 1275, 53);
+		lblForecasting.setBounds(77, 11, 178, 53);
 		forcasting_panel.add(lblForecasting);
 		
 		Panel field_panel = new Panel();
@@ -466,15 +458,10 @@ public class dashboard {
 		home_dashboard.add(field_panel);
 		field_panel.setLayout(null);
 		
-		JLabel label_3 = new JLabel("");
-		label_3.setIcon(neull);
-		label_3.setBounds(10, 11, 40, 53);
-		field_panel.add(label_3);
-		
 		JLabel lblFieldMonitor = new JLabel("Introduction to Java");
 		lblFieldMonitor.setForeground(new Color(255, 255, 255));
 		lblFieldMonitor.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblFieldMonitor.setBounds(70, 11, 1275, 53);
+		lblFieldMonitor.setBounds(59, 11, 191, 53);
 		field_panel.add(lblFieldMonitor);
 		
 		Panel analysis_panel = new Panel();
@@ -483,15 +470,10 @@ public class dashboard {
 		home_dashboard.add(analysis_panel);
 		analysis_panel.setLayout(null);
 		
-		JLabel label_5 = new JLabel("");
-		label_5.setIcon(neull);
-		label_5.setBounds(10, 11, 40, 53);
-		analysis_panel.add(label_5);
-		
-		JLabel lblAnalysis = new JLabel("Inheritance & Polymorphism");
+		JLabel lblAnalysis = new JLabel("Inheritance and Polymorphism");
 		lblAnalysis.setForeground(Color.WHITE);
 		lblAnalysis.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblAnalysis.setBounds(25, 11, 271, 53);
+		lblAnalysis.setBounds(26, 11, 280, 53);
 		analysis_panel.add(lblAnalysis);
 		
 		Panel reports_panel = new Panel();
@@ -500,15 +482,10 @@ public class dashboard {
 		home_dashboard.add(reports_panel);
 		reports_panel.setLayout(null);
 		
-		JLabel label_8 = new JLabel("");
-		label_8.setIcon(neull);
-		label_8.setBounds(10, 11, 40, 53);
-		reports_panel.add(label_8);
-		
 		JLabel lblReports = new JLabel("RMI and Socket");
 		lblReports.setForeground(Color.WHITE);
 		lblReports.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblReports.setBounds(71, 11, 1292, 53);
+		lblReports.setBounds(78, 11, 202, 53);
 		reports_panel.add(lblReports);
 		
 		Panel news_panel = new Panel();
@@ -517,15 +494,10 @@ public class dashboard {
 		news_panel.setBounds(125, 361, 306, 76);
 		home_dashboard.add(news_panel);
 		
-		JLabel label_7 = new JLabel("");
-		label_7.setIcon(neull);
-		label_7.setBounds(10, 11, 40, 53);
-		news_panel.add(label_7);
-		
 		JLabel lblNews = new JLabel("Exceptions and Threads");
 		lblNews.setForeground(Color.WHITE);
 		lblNews.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblNews.setBounds(70, 11, 1275, 53 );
+		lblNews.setBounds(50, 11, 220, 53);
 		news_panel.add(lblNews);
 		
 		Panel forum_panel = new Panel();
@@ -534,15 +506,10 @@ public class dashboard {
 		home_dashboard.add(forum_panel);
 		forum_panel.setLayout(null);
 		
-		JLabel label_6 = new JLabel("");
-		label_6.setIcon(neull);
-		label_6.setBounds(10, 11, 40, 53);
-		forum_panel.add(label_6);
-		
 		JLabel lblForum = new JLabel("Abstraction and Encapsulation");
 		lblForum.setForeground(Color.WHITE);
 		lblForum.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		lblForum.setBounds(24, 11, 282, 53);
+		lblForum.setBounds(20, 11, 286, 53);
 		forum_panel.add(lblForum);
  
 //***************************************************SALES & PURCHASE DASHBOARD********************************************//
@@ -838,7 +805,7 @@ public class dashboard {
 		contact_dashboard.add(label_12);
 		
 		txt_to = new JTextField();
-		txt_to.setText("modagrospark@gmail.com");
+		txt_to.setText("learnjava@gmail.com");
 		txt_to.setHorizontalAlignment(SwingConstants.CENTER);
 		txt_to.setForeground(Color.WHITE);
 		txt_to.setFont(new Font("Bookman Old Style", Font.BOLD, 14));
@@ -946,13 +913,13 @@ public class dashboard {
 		contact_dashboard.add(btn_send);
 		
 		Panel locaton_panel = new Panel();
-		locaton_panel.setBounds(315, 0, 468, 75);
+		locaton_panel.setBounds(294, 0, 489, 75);
 		frmDashboard.getContentPane().add(locaton_panel);
 		locaton_panel.setLayout(null);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setBounds(23, 11, 50, 53);
-		label_1.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\location 40.png"));
+		label_1.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\location 40.png"));
 		locaton_panel.add(label_1);
 		
 		JLabel lblPuneMaharashtra = new JLabel();
@@ -1094,291 +1061,291 @@ public class dashboard {
 		});
 		
 		
-//*****************************************************HOME PANEL MOUSE EVENTS***************************************************************************//
+		//*****************************************************HOME PANEL MOUSE EVENTS***************************************************************************//
 		
-		field_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
+				field_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  Introduction to Java");
+						
+						introduction.main(null);
+						
+					}
+				});
 				
-				lblSalesPurchase_2.setText("Home  /  Field Monitor");
 				
-				//SensorGraph.main(null);
+				forcasting_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  Forecasting");
+						
+						introduction.main(null);
+						
+					}
+				});
 				
+				
+				analysis_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  Analysis");
+						
+						//AnalysisWindow.main(null);
+						
+					}
+				});
+				
+				
+				forum_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  Forum");
+						
+						Desktop browser = Desktop.getDesktop();
+						try {
+							browser.browse(new URI("https://modagrospark4.discussion.community"));
+						}catch(IOException err) {
+							
+						} catch (URISyntaxException e1) {
+							e1.printStackTrace();
+						}
+						
+					}
+				});
+				
+				
+				news_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  News");
+						
+						Desktop browser = Desktop.getDesktop();
+						try {
+							browser.browse(new URI("http://epaper.agrowon.com/flashclient/client_panel.aspx#currPage=1/"));
+						}catch(IOException err) {
+							
+						} catch (URISyntaxException e1) {
+							e1.printStackTrace();
+						}
+						
+					}
+				});
+				
+				
+				reports_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Home  /  Reports");
+						
+						//reportWindow.main(null);
+						
+					}
+				});
+				
+		//************************************************************SALES&PURCHASE PANEL MOUSE EVENTS**********************************************************//
+				
+				sales_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Sales & Purchase  /  Sales");
+						//SalesFrame.main(null);
+					}
+				});
+				
+				
+				purchase_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Sales & Purchase  /  Purchase");
+						//PurchaseFrame.main(null);
+						
+					}
+				});
+				
+				
+				merchants_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Sales & Purchase  /  Contact Merchants");
+						//ContactDealerFrame.main(null);
+						
+					}
+				});
+				
+		//************************************************************SETTING PANEL MOUSE EVENTS**********************************************************//
+				
+				fieldsetting_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Settings  /  Field Setting");
+						
+						//fieldsettingWindow.main(null);
+						
+					}
+				});
+				
+				
+				sensorsetting_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Settings  /  Sensor Setting");
+						
+						//sensor_settingWindow.main(null);
+						
+					}
+				});
+				
+		//*************************************************************ALERT PANEL MOUSE EVENTS*******************************************************************//
+				
+				sensoralert_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Check Alerts  /  Sensor Alert");
+						
+						//SensorAlerts.main(null);
+					}
+				});
+				
+				
+				salesalert_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Check Alerts  /  Sales & Purchase Alert");
+						
+						//saleAlerts.main(null);
+					}
+				});
+				
+				
+				forumalert_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Check Alerts  /  Forum/News Alert");
+						
+						Desktop browser = Desktop.getDesktop();
+						try {
+							browser.browse(new URI("https://modagrospark4.discussion.community"));
+						}catch(IOException err) {
+							
+						} catch (URISyntaxException e1) {
+							
+							e1.printStackTrace();
+						}
+						
+					}
+				});
+				
+		//*************************************************************PROFILE PANEL MOUSE EVENTS***********************************************************//
+				
+				myprofile_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Profile  /  My Profile");
+						myProfile.main(new String[] {username});
+						
+					}
+				});
+				
+				
+				update_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Profile  /  Update Me");
+						updateProfile.main(new String[] {username});
+						
+					}
+				});
+				
+				
+				delete_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Profile  /  Delete Me");
+						DeleteProfile.main(new String[] {username});
+						
+					}
+				});
+				
+				
+				backup_panel.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						lblSalesPurchase_2.setText("Profile  /  User Access info");
+						user_accessWindow.main(new String[] {username});
+					}
+				});
+				
+		//***************************************************************CONTACT PANEL MOUSE EVENTS***********************************************************//
+				
+				
+		//***********************************************************LOGOUT BUTTON CODE***********************************************************************//
+				
+				logout_button.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+						java.util.Date current_date = Calendar.getInstance().getTime();
+						DateFormat dateFormat1 = new SimpleDateFormat("dd MMMMM, yyyy"); 
+						DateFormat dateFormat2 = new SimpleDateFormat("hh:mm a");
+						String date_now_str = dateFormat1.format(current_date);  // current date in string
+						String now_time_str = dateFormat2.format(current_date);  //current time in string
+						
+						String labltime = time_label.getText();
+						String timesta = labltime.substring(0, labltime.length() - 1);
+						
+						try{
+							
+							Connection conn5 = null;
+							String url = "jdbc:mysql://localhost:3306/";
+							String dbName = "learnjava";
+							String driver = "com.mysql.cj.jdbc.Driver";
+							String userName = "root";
+							String password = "";
+							Class.forName(driver).newInstance();
+							conn5 = DriverManager.getConnection(url+dbName,userName,password);
+						
+							PreparedStatement ps=conn5.prepareStatement("insert into user_access_info (username, date, access_period, logout_time) values(?,?,?,?)");
+						
+							ps.setString(1, username);
+							ps.setString(2, date_now_str);
+							ps.setString(3, timesta);
+							ps.setString(4, now_time_str);
+						
+							ps.executeUpdate();
+							
+							conn5.close();
+							
+							login.main(null);
+							
+							 Component component = (Component) e.getSource();
+						     JFrame win = (JFrame) SwingUtilities.getRoot(component);
+						     win.dispose();
+							
+						}catch(Exception err) {
+							JOptionPane.showMessageDialog(null,
+									"Error Occured..! Can't LogOut Now..!");
+						}
+						
+						
+					}
+				});
 			}
-		});
-		
-		
-		forcasting_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Home  /  Forecasting");
-				
-				//ForecastingWindow.main(null);
-				
-			}
-		});
-		
-		
-		analysis_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Home  /  Analysis");
-				
-				//AnalysisWindow.main(null);
-				
-			}
-		});
-		
-		
-		forum_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Home  /  Forum");
-				
-				Desktop browser = Desktop.getDesktop();
-				try {
-					browser.browse(new URI("https://modagrospark4.discussion.community"));
-				}catch(IOException err) {
-					
-				} catch (URISyntaxException e1) {
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		
-		
-		news_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Home  /  News");
-				
-				Desktop browser = Desktop.getDesktop();
-				try {
-					browser.browse(new URI("http://epaper.agrowon.com/flashclient/client_panel.aspx#currPage=1/"));
-				}catch(IOException err) {
-					
-				} catch (URISyntaxException e1) {
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		
-		
-		reports_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Home  /  Reports");
-				
-				//reportWindow.main(null);
-				
-			}
-		});
-		
-//************************************************************SALES&PURCHASE PANEL MOUSE EVENTS**********************************************************//
-		
-		sales_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Sales & Purchase  /  Sales");
-				//SalesFrame.main(null);
-			}
-		});
-		
-		
-		purchase_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Sales & Purchase  /  Purchase");
-				//PurchaseFrame.main(null);
-				
-			}
-		});
-		
-		
-		merchants_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Sales & Purchase  /  Contact Merchants");
-				//ContactDealerFrame.main(null);
-				
-			}
-		});
-		
-//************************************************************SETTING PANEL MOUSE EVENTS**********************************************************//
-		
-		fieldsetting_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Settings  /  Field Setting");
-				
-				//fieldsettingWindow.main(null);
-				
-			}
-		});
-		
-		
-		sensorsetting_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Settings  /  Sensor Setting");
-				
-				//sensor_settingWindow.main(null);
-				
-			}
-		});
-		
-//*************************************************************ALERT PANEL MOUSE EVENTS*******************************************************************//
-		
-		sensoralert_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Check Alerts  /  Sensor Alert");
-				
-				//SensorAlerts.main(null);
-			}
-		});
-		
-		
-		salesalert_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Check Alerts  /  Sales & Purchase Alert");
-				
-				//saleAlerts.main(null);
-			}
-		});
-		
-		
-		forumalert_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Check Alerts  /  Forum/News Alert");
-				
-				Desktop browser = Desktop.getDesktop();
-				try {
-					browser.browse(new URI("https://modagrospark4.discussion.community"));
-				}catch(IOException err) {
-					
-				} catch (URISyntaxException e1) {
-					
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		
-//*************************************************************PROFILE PANEL MOUSE EVENTS***********************************************************//
-		
-		myprofile_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Profile  /  My Profile");
-				//myProfile.main(new String[] {username});
-				
-			}
-		});
-		
-		
-		update_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Profile  /  Update Me");
-				//updateProfile.main(new String[] {username});
-				
-			}
-		});
-		
-		
-		delete_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Profile  /  Delete Me");
-				//DeleteProfile.main(new String[] {username});
-				
-			}
-		});
-		
-		
-		backup_panel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				lblSalesPurchase_2.setText("Profile  /  User Access info");
-				//user_accessWindow.main(new String[] {username});
-			}
-		});
-		
-//***************************************************************CONTACT PANEL MOUSE EVENTS***********************************************************//
-		
-		
-//***********************************************************LOGOUT BUTTON CODE***********************************************************************//
-		
-		logout_button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				
-				java.util.Date current_date = Calendar.getInstance().getTime();
-				DateFormat dateFormat1 = new SimpleDateFormat("dd MMMMM, yyyy"); 
-				DateFormat dateFormat2 = new SimpleDateFormat("hh:mm a");
-				String date_now_str = dateFormat1.format(current_date);  // current date in string
-				String now_time_str = dateFormat2.format(current_date);  //current time in string
-				
-				String labltime = time_label.getText();
-				String timesta = labltime.substring(0, labltime.length() - 1);
-				
-				try{
-					
-					Connection conn5 = null;
-					String url = "jdbc:mysql://localhost:3306/";
-					String dbName = "modagrospark";
-					String driver = "com.mysql.cj.jdbc.Driver";
-					String userName = "root";
-					String password = "";
-					Class.forName(driver).newInstance();
-					conn5 = DriverManager.getConnection(url+dbName,userName,password);
-				
-					PreparedStatement ps=conn5.prepareStatement("insert into user_access_info (username, date, access_period, logout_time) values(?,?,?,?)");
-				
-					ps.setString(1, username);
-					ps.setString(2, date_now_str);
-					ps.setString(3, timesta);
-					ps.setString(4, now_time_str);
-				
-					ps.executeUpdate();
-					
-					conn5.close();
-					
-					login.main(null);
-					
-					 Component component = (Component) e.getSource();
-				     JFrame win = (JFrame) SwingUtilities.getRoot(component);
-				     win.dispose();
-					
-				}catch(Exception err) {
-					JOptionPane.showMessageDialog(null,
-							"Error Occured..! Can't LogOut Now..!");
-				}
-				
-				
-			}
-		});
-	}
-}
+		}

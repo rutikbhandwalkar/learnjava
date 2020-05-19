@@ -37,7 +37,6 @@ public class login extends JFrame {
 	static int posY1=0;
 	
 	
-
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField user_txt;
@@ -233,7 +232,7 @@ public class login extends JFrame {
 
 		JLabel logoVariable = new JLabel("");
 		logoVariable.setHorizontalAlignment(SwingConstants.CENTER);
-		logoVariable.setIcon(new ImageIcon("C:\\Users\\hp\\eclipse-workspace\\ModAgroSpark\\Images\\try.png"));
+		logoVariable.setIcon(new ImageIcon("C:\\Users\\Rutik\\Desktop\\Website\\learnjava\\images\\learnjava.png"));
 		logoVariable.setBounds(0, 0, 368, 395);
 		contentPanel.add(logoVariable);
 		
@@ -244,7 +243,7 @@ public class login extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				
-				//signup.main(null);
+				signup.main(null);
 				
 				 Component component = (Component) e.getSource();
 			     JFrame dialog = (JFrame) SwingUtilities.getRoot(component);
@@ -263,7 +262,7 @@ public class login extends JFrame {
 				try {
 					Connection conn = null;
 					String url = "jdbc:mysql://localhost:3306/";
-					String dbName = "modagrospark";
+					String dbName = "learnjava";
 					String driver = "com.mysql.cj.jdbc.Driver";
 					String userName = "root";
 					String password = "";
@@ -282,7 +281,7 @@ public class login extends JFrame {
 					if(rs.next()) {
 						user_txt.setText(null);
 						pass_txt.setText(null);
-						//FirstWindow.main(new String[] {myusn});
+						dashboard.main(new String[] {myusn});
 						 Component component = (Component) e.getSource();
 					     JFrame dialog = (JFrame) SwingUtilities.getRoot(component);
 					     dialog.dispose();
