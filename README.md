@@ -1,2 +1,2 @@
 # learnjava
-One can easily java concepts through this project
+One can easily learn java concepts through this project
