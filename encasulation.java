@@ -1,33 +1,6 @@
-package learnjava;
 
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import java.awt.Component;
 
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JTextField;
-import java.awt.event.MouseMotionAdapter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.border.LineBorder;
-import java.awt.Toolkit;
-import javax.swing.JTextPane;
-
-//@SuppressWarnings("serial")
 public class encapsulation extends JFrame {
 
 	private JPanel contentPane;
@@ -45,7 +18,7 @@ public class encapsulation extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					encapsultion frame = new encapsulation();
+					encapsulation frame = new encapsulation();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
